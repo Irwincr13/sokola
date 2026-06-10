@@ -510,13 +510,30 @@
   </footer>
 
   <script>
-    function handleSubmit(e, successId) {
+  const TALLY_URL = 'https://tally.so/r/RGjXxP';
+
+  async function handleSubmit(e, successId) {
       e.preventDefault();
       const form = e.target;
       const email = form.querySelector('input[type="email"]').value;
+      const btn = form.querySelector('button');
+
+      btn.textContent = 'Saving...';
+      btn.disabled = true;
+
+      try {
+        await fetch(TALLY_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'sokola-waitlist' })
+        });
+      } catch (err) {
+        console.error('Tally submit error:', err);
+      }
+
       form.style.display = 'none';
       document.getElementById(successId).style.display = 'block';
-      console.log('Email captured:', email);
     }
   </script>
 
