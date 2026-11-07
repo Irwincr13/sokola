@@ -1,0 +1,57 @@
+/* Tokens mirror the landing page (../index.html). */
+:root {
+  --amber-50: #faeeda;
+  --amber-600: #854f0b;
+  --amber-800: #633806;
+  --gray-50: #f7f5f0;
+  --gray-100: #edebe5;
+  --gray-300: #c8c6be;
+  --gray-500: #888780;
+  --gray-900: #1c1b18;
+  --white: #ffffff;
+  --font: 'Inter', system-ui, sans-serif;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--gray-50);
+  color: var(--gray-900);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.logo { font-size: 1.25rem; font-weight: 500; color: var(--amber-600); letter-spacing: -0.02em; }
+.muted { color: var(--gray-500); }
+.center { min-height: 100vh; display: grid; place-items: center; }
+
+.auth { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; padding: 1rem; }
+.card { width: 100%; max-width: 380px; background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; }
+.card h2 { font-size: 1.125rem; font-weight: 500; }
+.card label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.8125rem; color: var(--gray-500); }
+
+input {
+  padding: 0.7rem 0.9rem; font: inherit; font-size: 0.9rem; color: var(--gray-900);
+  border: 1px solid var(--gray-300); border-radius: var(--radius-md); background: var(--white); outline: none;
+}
+input:focus { border-color: var(--amber-600); box-shadow: 0 0 0 3px var(--amber-50); }
+
+button {
+  padding: 0.7rem 1.1rem; font: inherit; font-size: 0.875rem; font-weight: 500;
+  background: var(--amber-600); color: var(--amber-50); border: none; border-radius: var(--radius-md); cursor: pointer;
+}
+button:hover { background: var(--amber-800); }
+button:disabled { opacity: 0.6; cursor: default; }
+button.link { background: none; color: var(--amber-600); padding: 0.25rem; }
+button.link:hover { text-decoration: underline; }
+
+.error { font-size: 0.8125rem; color: #a32d2d; }
+.notice { font-size: 0.8125rem; color: #3b6d11; background: #eaf3de; padding: 0.6rem 0.8rem; border-radius: var(--radius-md); }
+
+.topbar { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--gray-100); }
+.topbar .muted { margin-left: auto; font-size: 0.8125rem; }
+.page { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+.page h1 { font-size: 1.5rem; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
